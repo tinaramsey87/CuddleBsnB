@@ -10,6 +10,22 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+
+@import "bootstrap";
+@import "bootstrap-sprockets";
+
+.jumbotron {
+  max-height: 800px;
+  padding: 20px;
+  margin-top: 0px;
+}
+
+.navbar {
+  max-width: 100%;
+}
+
+.navbar-brand img {
+  max-height: 30px;
+  max-width: 50px;
+}

@@ -1,0 +1,10 @@
+<h2>Where you can stay--with your pet!</h2>
+
+
+<ul>
+  <% @cities.each do |city| %>
+    <li>
+      <%= city.city %>, <%= city.state %>
+    </li>
+  <% end %>
+</ul>

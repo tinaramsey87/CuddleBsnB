@@ -12,3 +12,28 @@ describe 'the sign up process' do
     expect(page).to have_content "successfully"
   end
 end
+
+describe 'the sign in a user process' do
+  it 'signs in a user' do
+    FactoryGirl.create(:user)
+    visit cities_path
+    click_on "Sign In"
+    fill_in "Email", with: "bob@robert.com"
+    fill_in "Password", with: "1234dcba"
+    click_on "Log in"
+    expect(page).to have_content "successfully"
+  end
+end
+
+describe 'the sign out a user process' do
+  it 'signs out a user' do
+    FactoryGirl.create(:user)
+    visit cities_path
+    click_on "Sign In"
+    fill_in "Email", with: "bob@robert.com"
+    fill_in "Password", with: "1234dcba"
+    click_on "Log in"
+    click_on "Sign Out"
+    expect(page).to have_content "successfully"
+  end
+end
