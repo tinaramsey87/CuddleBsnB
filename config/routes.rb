@@ -3,5 +3,8 @@ Rails.application.routes.draw do
 
   root to: "cities#index"
 
-  resources :cities, :except => [:edit, :update]
+  resources :cities, :except => [:edit, :update] do
+    resources :listings, :except => [:index]
+  end
+
 end

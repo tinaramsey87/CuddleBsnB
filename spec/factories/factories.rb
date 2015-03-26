@@ -12,4 +12,11 @@ FactoryGirl.define do
     state("Virginia")
   end
 
+  factory :listing do
+    name("44 Cherry Lane")
+    zip(23452)
+    price(100.00)
+    city
+  end
+
 end

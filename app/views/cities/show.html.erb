@@ -1,0 +1,13 @@
+<h2><%= @city.city %>, <%= @city.state %></h2>
+
+<ul>
+  <% @listings.each do |listing| %>
+    <li><%= listing.name %> <%= number_to_currency(listing.price) %>/night</li>
+  <% end %>
+</ul>
+
+
+<% if current_user && current_user.admin %>
+  <%= link_to "Add new listing", new_city_listing_path(@city) %>
+
+<% end %>

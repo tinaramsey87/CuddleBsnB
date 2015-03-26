@@ -33,10 +33,12 @@
     </nav>
   </div>
 
-<%= flash[:notice] %>
-<%= flash[:alert] %>
-
-<%= yield %>
+  <%= flash[:notice] %>
+  <%= flash[:alert] %>
+  <div class="container">
+    
+    <%= yield %>
+  </div>
 
 </body>
 </html>
