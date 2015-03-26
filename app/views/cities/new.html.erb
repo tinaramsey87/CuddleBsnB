@@ -1,13 +1,21 @@
-<%= render 'layouts/errors', :object => @city %>
+<% if current_user && current_user.admin %>
+
+    <%= render 'layouts/errors', :object => @city %>
 
 
-<%= form_for @city do |f| %>
+    <%= form_for @city do |f| %>
 
-  <%= f.label :city %>
-  <%= f.text_field :city %>
+      <%= f.label :city %>
+      <%= f.text_field :city %>
 
-  <%= f.label :state %>
-  <%= f.text_field :state %>
+      <%= f.label :state %>
+      <%= f.text_field :state %>
 
-  <%= f.submit %>
+      <%= f.submit %>
+    <% end %>
+
+<% else %>
+
+<p> You must be logged in with admin privileges to add new cities.</p>
+
 <% end %>

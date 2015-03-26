@@ -1,9 +1,18 @@
 <h2>Where you can stay--with your pet!</h2>
 
+<% if current_user && current_user.admin %>
+    <%= link_to "Add new city", new_city_path %>
+<% end %>
+
+
 <ul>
   <% @cities.each do |city| %>
     <li>
       <%= city.city %>, <%= city.state %>
+        <% if current_user && current_user.admin %>
+            <%= link_to "Godzilla It", city_path(city),
+            data: { confirm: "Destroy forever?", method: "delete" } %>
+        <% end %>
     </li>
   <% end %>
 </ul>

@@ -21,6 +21,10 @@ class CitiesController < ApplicationController
   end
 
   def destroy
+    @city = City.find(params[:id])
+    @city.destroy
+    flash[:alert] = "They are ended. They will not rebuild."
+    redirect_to cities_path
   end
 
   private
